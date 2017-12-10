@@ -164,7 +164,7 @@
         source: recipe.fetcher,
         downloads: oldNames.concat(name).reduce(function(sum, n) { return sum + (downloads[n] || 0); }, 0),
         fetcher: recipe.fetcher,
-        recipeURL: "https://github.com/CyberShadow/melpa/blob/master/recipes/" + name,
+        recipeURL: "https://github.com/CyberShadow/melpa/blob/cselpa/recipes/" + name,
         packageURL: "packages/" + name + "-" + version + "." + (built.type == "single" ? "el" : "tar"),
         sourceURL: calculateSourceURL(name, recipe, commit),
         oldNames: oldNames,
