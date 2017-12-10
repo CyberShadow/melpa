@@ -164,7 +164,7 @@
         source: recipe.fetcher,
         downloads: oldNames.concat(name).reduce(function(sum, n) { return sum + (downloads[n] || 0); }, 0),
         fetcher: recipe.fetcher,
-        recipeURL: "https://github.com/melpa/melpa/blob/master/recipes/" + name,
+        recipeURL: "https://github.com/CyberShadow/melpa/blob/master/recipes/" + name,
         packageURL: "packages/" + name + "-" + version + "." + (built.type == "single" ? "el" : "tar"),
         sourceURL: calculateSourceURL(name, recipe, commit),
         oldNames: oldNames,
@@ -528,7 +528,7 @@
   melpa.archivename = {};
   melpa.archivename.controller = function() {
     this.archiveName = function() {
-      return melpa.stable() ? "MELPA Stable" : "MELPA";
+      return melpa.stable() ? "CSELPA Stable" : "CSELPA";
     };
   };
   melpa.archivename.view = function(ctrl) {
@@ -581,26 +581,7 @@
       m("section.page-header", [
         m("h1", [
           melpa.archivename.view(ctrl.archivename),
-          m("small", " (Milkypostman’s Emacs Lisp Package Archive)")
-        ])
-      ]),
-      m(".row", [
-        m(".col-md-8", [
-          m("section.jumbotron", [
-            m("ul", [
-              "<strong>Up-to-date packages built on our servers from upstream source</strong>",
-              "<strong>Installable in any Emacs with 'package.el'</strong> - no local version-control tools needed",
-              "<strong>Curated</strong> - no obsolete, renamed, forked or randomly hacked packages",
-              "<strong>Comprehensive</strong> - more packages than any other archive",
-              "<strong>Automatic updates</strong> - new commits result in new packages",
-              "<strong>Extensible</strong> - contribute recipes via github, and we'll build the packages"
-            ].map(function(content) { return m("li", m.trust(content)); }))
-          ])
-        ]),
-        m(".col-md-4", [
-          melpa.buildstatus.view(ctrl.buildstatus),
-          m.trust('<a class="twitter-timeline" data-dnt="true" data-related="milkypostman,sanityinc" href="https://twitter.com/melpa_emacs" data-widget-id="311867756586864640">Tweets by @melpa_emacs</a>'),
-          m('script', {src: "//platform.twitter.com/widgets.js", type: "text/javascript"})
+          m("small", " (CyberShadow’s Emacs Lisp Package Archive)")
         ])
       ]),
       melpa.packagelist.view(ctrl.packagelist)
@@ -647,7 +628,6 @@
   m.route.mode = "hash";
   m.route(document.getElementById("content"), "/", {
     "/": melpa.titledPage(melpa.frontpage),
-    "/getting-started": melpa.titledPage(melpa.gettingstarted),
     "/:package": melpa.titledPage(melpa.packagedetails)
   });
 })(window.m, window.document, window._, window.moment, window.Cookies);

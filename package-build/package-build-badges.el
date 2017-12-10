@@ -41,7 +41,7 @@
               (list "curl" "-f" "-o"
                     (expand-file-name (concat name "-badge.svg") target-dir)
                     (format "https://img.shields.io/badge/%s-%s-%s.svg"
-                            (if package-build-stable "melpa stable" "melpa")
+                            (if package-build-stable "cselpa stable" "cselpa")
                             (url-hexify-string version)
                             (if package-build-stable "3e999f" "922793")))
               " ")))
